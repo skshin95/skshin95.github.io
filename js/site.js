@@ -47,6 +47,7 @@
     modal.querySelector('.modal-close')?.addEventListener('click',closeModal);
     document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
   }
+  document.querySelectorAll('.network-overlay').forEach(btn=>btn.addEventListener('click',()=>btn.parentElement.classList.add('active')));
   const sections=[...document.querySelectorAll('main section[id]')];
   if(sections.length && window.IntersectionObserver){
     const navObserver=new IntersectionObserver(entries=>{
