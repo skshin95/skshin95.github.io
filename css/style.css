@@ -990,6 +990,25 @@ a:focus-visible {
   border-bottom: 1px solid var(--line);
 }
 
+.fig-center {
+  max-width: 685px;
+  margin: 0 auto;
+}
+
+.network-row {
+  display: grid;
+  grid-template-columns: minmax(0,1.5fr) minmax(0,1fr);
+  align-items: center;
+  margin-top: 24px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+}
+
+.network-row .network-embed {
+  height: auto;
+  aspect-ratio: 1/1;
+}
+
 .network-embed {
   position: relative;
   height: 560px;
@@ -1503,6 +1522,16 @@ a:focus-visible {
   }
 
   .network-embed {
+    height: 440px;
+  }
+
+  .network-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .network-row .network-embed {
+    aspect-ratio: auto;
     height: 440px;
   }
 

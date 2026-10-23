@@ -7,7 +7,7 @@
     <meta name="description" content="Automated Reaction Network Modeling - research by Sunkyu Shin.">
     <title>Automated Reaction Network Modeling | Sunkyu Shin</title>
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-    <link rel="stylesheet" href="css/style.css?v=20261022b">
+    <link rel="stylesheet" href="css/style.css?v=20261022c">
   </head>
   <body>
     <header class="site-header">
@@ -59,7 +59,7 @@
             <p class="section-kicker">Approach / 01</p>
             <h2>AI-based automatic reaction network generation</h2>
             <figure class="framework-panel">
-              <img src="assets/automated-network-generation.png?v=20261022b" alt="AI-based automatic reaction network generation: quantum chemistry data and database plus molecular GNN property prediction feed RMG, which generates the reaction network">
+              <img src="assets/automated-network-generation.png?v=20261022c" alt="AI-based automatic reaction network generation: quantum chemistry data and database plus molecular GNN property prediction feed RMG, which generates the reaction network">
             </figure>
             <p>Reaction mechanisms provide a molecular-scale description of a chemical system. I use automated mechanism-generation tools and carefully evaluated kinetic information to construct and validate mechanisms for ammonia-based fuel mixtures, then analyze how individual pathways shape emissions.</p>
             <a href="index.html#research" class="text-link">Explore overall research framework ↗</a>
@@ -81,13 +81,17 @@
             <h3>Ammonia-based combustion</h3>
             <p>Detailed kinetics for NH₃/H₂ and NH₃/H₂/CH₄ fuel blends, emphasizing combustion behavior and pollutant formation. The interactive view below shows the reaction network of the NH₃/CH₄ co-firing mechanism.</p>
             <figure>
-              <div class="network-embed">
-                <iframe src="assets/reaction-network-3d.html" title="Interactive 3D reaction network of the NH3/CH4 co-firing mechanism" loading="lazy"></iframe>
-                <button class="network-overlay" type="button">Click to explore the 3D network</button>
+              <img class="fig-center" src="assets/ammonia-cofiring.png" alt="NH3 and CH4 co-firing in a combustor" loading="lazy">
+              <div class="network-row">
+                <img src="assets/ammonia-qc-generation.png" alt="Quantum chemistry calculations stored in a database and used by RMG for automatic reaction network generation" loading="lazy">
+                <div class="network-embed">
+                  <iframe src="assets/reaction-network-3d.html" title="Interactive 3D reaction network of the NH3/CH4 co-firing mechanism" loading="lazy"></iframe>
+                  <button class="network-overlay" type="button">Click to explore the 3D network</button>
+                </div>
               </div>
               <figcaption class="framework-caption">
                 <b>Figure 01.</b>
-                <span>Interactive 3D reaction network of the NH₃/CH₄ co-firing mechanism (104 species, 2,348 connections). Drag to rotate, scroll to zoom, and hover over a node to see the species.</span>
+                <span>NH₃/CH₄ co-firing (top), and quantum chemistry calculations feeding the RMG database for automatic generation of the interactive 3D reaction network (bottom; 104 species, 2,348 connections). Click the network, then drag to rotate, scroll to zoom, and hover over a node to see the species.</span>
               </figcaption>
             </figure>
           </article>
@@ -136,6 +140,6 @@
         </div>
       </div>
     </footer>
-    <script src="js/site.js?v=20261022b" defer></script>
+    <script src="js/site.js?v=20261022c" defer></script>
   </body>
 </html>
