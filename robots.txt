@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /Sunkyu_Shin_Portfolio_Draft01/
+
+Sitemap: https://skshin95.github.io/sitemap.xml
