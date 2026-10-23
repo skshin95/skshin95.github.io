@@ -7,7 +7,7 @@
     <meta name="description" content="Scientific AI Integration - research by Sunkyu Shin.">
     <title>Scientific AI Integration | Sunkyu Shin</title>
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-    <link rel="stylesheet" href="css/style.css?v=20261022e">
+    <link rel="stylesheet" href="css/style.css?v=20261023b">
   </head>
   <body>
     <header class="site-header">
@@ -43,7 +43,7 @@
           <div class="page-lead reveal">
             <div class="eyebrow">Research area / 03</div>
             <h1>Scientific AI Integration</h1>
-            <p>Accelerating high-dimensional, physics-based reactor models through physics-informed neural networks, geometry-aware surrogate modeling, and computational optimization.</p>
+            <p>I accelerate high-dimensional, physics-based reactor models with physics-informed neural networks, geometry-aware surrogate modeling, and computational optimization.</p>
             <div class="pillrow">
               <span class="pill">PINNs</span>
               <span class="pill">Geometry generalization</span>
@@ -61,13 +61,15 @@
                 <p class="section-kicker">Approach / 01</p>
                 <h2>Physics-informed neural<br>networks for CFD</h2>
               </div>
-              <p>A deep neural network learns flow fields from both data and the governing physical equations, keeping its predictions consistent with the underlying physics. As a result, the PINN reproduces CFD flow fields more closely than a conventional neural network.</p>
+              <p>Unlike conventional neural networks that learn only from data, PINNs learn the governing physical laws. This ensures physical consistency and allows more generalized predictions.</p>
             </div>
             <figure class="framework-panel">
               <img class="concept-figure" src="assets/PINN_concept.png" alt="Concept comparison: data-driven AI fits model or experiment data, while physics-informed AI is trained with physical information on species, momentum, and energy" loading="lazy">
               <img src="assets/PINN.png" alt="PINN structure: a deep neural network whose loss combines empirical error against the true model and physical equation residuals computed by automatic differentiation" loading="lazy">
+              <p class="fig-note">In the PINN structure, the residuals of the governing equations enter the loss function in a soft form. The network is therefore penalized for any deviation from the physical laws during training.</p>
               <div class="vortex-demo">
                 <p class="vortex-title">Flow-field prediction comparison</p>
+                <p class="fig-note">A conventional NN fails to reproduce the flow field, while the PINN accurately predicts the nonlinear flow.</p>
                 <div class="vortex-row">
                   <div class="vortex-panel">
                     <img src="assets/vortex-cfd-pinn.webp" alt="Flow field from CFD simulation" loading="lazy">
@@ -85,7 +87,7 @@
               </div>
               <figcaption class="framework-caption">
                 <b>Figure 01.</b>
-                <span>Data-driven versus physics-informed AI (top), PINN structure and loss formulation (middle), and flow fields predicted by CFD, a conventional NN, and the PINN (bottom).</span>
+                <span>Data-driven versus physics-informed AI (top), PINN structure and loss formulation (middle), and flow fields from CFD, a conventional NN, and the PINN (bottom).</span>
               </figcaption>
             </figure>
           </div>
@@ -95,7 +97,7 @@
                 <p class="section-kicker">Approach / 02</p>
                 <h2>Surrogate-based<br>optimization</h2>
               </div>
-              <p>Detailed reactor models are replaced by DNN surrogate models trained on their predictions, enabling fast process optimization that iterates design variables until the output matches the target.</p>
+              <p>CFD-based detailed models have a very high computational cost. Optimization requires many repeated calculations, so the cost becomes prohibitive and the search range is limited. AI-based surrogate models predict the results quickly and make wide-range optimization possible.</p>
             </div>
             <figure class="framework-panel">
               <img src="assets/surrogate-optimization.png" alt="Surrogate-based optimization workflow: a detailed reactor model, a DNN surrogate model, and a process optimization loop between design variables, surrogate model, and target output" loading="lazy">
@@ -119,7 +121,7 @@
               <span>Application / 01</span>
             </div>
             <h3>Reactor blade design using geometry-aware PINN</h3>
-            <p>Geometry-aware PINNs that predict flow fields across blade geometries, enabling simultaneous optimization of reactor design and operating conditions.</p>
+            <p>The geometry-aware PINN recognizes changes in reactor geometry and predicts the resulting changes in the flow field. This work applies the model to variations in blade radius, blade height, and stirring rate.</p>
             <figure>
               <p class="fig-subtitle">Structure of geometry-aware PINN</p>
               <img src="assets/geometric-pinn.png" alt="Geometry-aware PINN: reactor design parameters (height, stirring rate, radius) and geometric boundary conditions feed a PINN that predicts the flow field" loading="lazy">
@@ -129,9 +131,10 @@
                 <img class="anim-layer" style="left:51.919%;top:11.825%;width:24.078%;height:74.550%" src="assets/blade-height-vz.webp" alt="" loading="lazy">
                 <img class="anim-layer" style="left:77.050%;top:12.339%;width:22.272%;height:74.036%" src="assets/stirring-rate-vx.webp" alt="" loading="lazy">
               </div>
+              <p class="fig-note">The developed PINN predicts flow fields that are nearly identical to the CFD results. Conventional CFD needs a new iterative calculation for every design. Once trained, the PINN instantly predicts how the flow changes with the blade configuration, as the animations show.</p>
               <figcaption class="framework-caption">
                 <b>Figure 03.</b>
-                <span>Geometry-aware PINN for a stirred reactor (top), and CFD versus PINN flow fields with predicted velocity fields across blade heights and stirring rates (bottom).</span>
+                <span>Geometry-aware PINN for a stirred reactor (top), and CFD versus PINN flow fields with velocity fields across blade heights and stirring rates (bottom).</span>
               </figcaption>
             </figure>
           </article>
@@ -140,7 +143,7 @@
               <span>Application / 02</span>
             </div>
             <h3>Multiphysics PINN for an ethylene polymerization reactor</h3>
-            <p>A multiphysics PINN predicts velocity, pressure, temperature, and species concentrations from reactor operating conditions, trained with continuity, Navier–Stokes, and species balance losses alongside CFD data. It reproduces CFD fields and generalizes beyond the training range more accurately than a conventional neural network.</p>
+            <p>A multiphysics PINN predicts velocity, pressure, temperature, and species concentrations from reactor operating conditions. The training uses continuity, Navier–Stokes, and species balance losses together with CFD data. The PINN reproduces CFD fields and generalizes beyond the training range more accurately than a conventional neural network.</p>
             <figure>
               <img src="assets/multiphysics-pinn.png?v=20261017" alt="Multiphysics PINN architecture for an ethylene polymerization reactor with operating conditions, domain-wise Navier–Stokes equations, adaptive sampling, and training structure, plus training history of empirical, continuity, Navier–Stokes, and species balance losses for PINN and NN" loading="lazy">
               <img src="assets/multiphysics-pinn-fields.png?v=20261017" alt="Velocity and ethylene concentration fields predicted by CFD, PINN, and NN" loading="lazy">
@@ -156,13 +159,13 @@
               <span>Application / 03</span>
             </div>
             <h3>Polymerization reactor optimization for target MWDs</h3>
-            <p>A DNN surrogate trained on 3,000 CFD-derived molecular weight distributions maps operating conditions (initiator, chain transfer agent, and temperature) to MWD shape, enabling optimization of a nonideal polymerization reactor for target MWDs.</p>
+            <p>A DNN surrogate learns the relation between operating conditions (initiator, chain transfer agent, and temperature) and MWD shape from 3,000 CFD-derived molecular weight distributions. The surrogate then makes it possible to optimize a nonideal polymerization reactor for target MWDs.</p>
             <figure>
               <img src="assets/polymerization-surrogate.png" alt="Surrogate development: CFD-derived reactor model, 3,000 operating conditions of initiator, chain transfer agent, and temperature, and DNN training on 3,000 MWD data points with learning curve and accuracy plots" loading="lazy">
               <img src="assets/mwd-optimization.png" alt="MWD shape indices (asymmetry factor and bimodality) with operation maps, and optimized MWDs compared with target MWDs and an ideal CSTR" loading="lazy">
               <figcaption class="framework-caption">
                 <b>Figure 05.</b>
-                <span>DNN surrogate trained on CFD-derived MWD data (top), and MWD shape indices, operation maps, and optimization for target MWDs (bottom).</span>
+                <span>DNN surrogate model for CFD-derived MWD data (top), and MWD shape indices, operation maps, and optimization for target MWDs (bottom).</span>
               </figcaption>
             </figure>
           </article>
@@ -203,6 +206,6 @@
         </div>
       </div>
     </footer>
-    <script src="js/site.js?v=20261022e" defer></script>
+    <script src="js/site.js?v=20261023a" defer></script>
   </body>
 </html>

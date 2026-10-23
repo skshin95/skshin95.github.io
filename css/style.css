@@ -1054,6 +1054,19 @@ figure > .network-row:first-child {
   display: none;
 }
 
+.fig-note {
+  margin: 14px auto 16px;
+  max-width: 820px;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+.vortex-demo .fig-note {
+  margin: -6px 0 14px;
+  max-width: none;
+}
+
 .vortex-demo {
   margin-top: 22px;
   padding: 18px 20px 20px;
