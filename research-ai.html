@@ -68,26 +68,26 @@
               <img src="assets/PINN.png" alt="PINN structure: a deep neural network whose loss combines empirical error against the true model and physical equation residuals computed by automatic differentiation" loading="lazy">
               <p class="fig-note">In the PINN structure, the residuals of the governing equations enter the loss function in a soft form. The network is therefore penalized for any deviation from the physical laws during training.</p>
               <div class="vortex-demo">
-                <p class="vortex-title">Flow-field prediction comparison</p>
-                <p class="fig-note">A conventional NN fails to reproduce the flow field, while the PINN accurately predicts the nonlinear flow.</p>
+                <p class="vortex-title">Benchmark example: von Kármán vortex street</p>
+                <p class="fig-note">The von Kármán vortex street behind a cylinder is a well-known benchmark for unsteady flow. In this test, the conventional NN fails to reproduce the flow field, while the PINN captures the nonlinear vortex flow.</p>
                 <div class="vortex-row">
                   <div class="vortex-panel">
-                    <img src="assets/vortex-cfd-pinn.webp" alt="Flow field from CFD simulation" loading="lazy">
+                    <img src="assets/vortex-cfd-pinn.webp" alt="CFD result for the von Kármán vortex benchmark" loading="lazy">
                     <span>CFD</span>
                   </div>
                   <div class="vortex-panel">
-                    <img src="assets/vortex-conventional-nn.webp" alt="Flow field predicted by a conventional neural network" loading="lazy">
+                    <img src="assets/vortex-conventional-nn.webp" alt="Conventional neural network result for the von Kármán vortex benchmark" loading="lazy">
                     <span>Conventional NN</span>
                   </div>
                   <div class="vortex-panel">
-                    <img src="assets/vortex-cfd-pinn.webp" alt="Flow field predicted by the PINN" loading="lazy">
+                    <img src="assets/vortex-cfd-pinn.webp" alt="PINN result for the von Kármán vortex benchmark" loading="lazy">
                     <span>PINN</span>
                   </div>
                 </div>
               </div>
               <figcaption class="framework-caption">
                 <b>Figure 01.</b>
-                <span>Data-driven versus physics-informed AI (top), PINN structure and loss formulation (middle), and flow fields from CFD, a conventional NN, and the PINN (bottom).</span>
+                <span>Data-driven versus physics-informed AI (top), PINN structure and loss formulation (middle), and CFD, conventional NN, and PINN results for the von Kármán vortex benchmark (bottom).</span>
               </figcaption>
             </figure>
           </div>
