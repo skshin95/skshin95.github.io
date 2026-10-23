@@ -5,8 +5,8 @@ A self-contained, responsive, static academic portfolio. No paid service, web fr
 ## Pages
 - `index.html`: Homepage. Top-level navigation: Profile / Research / Experience / Publications.
 - `research-kinetics.html`: Automated Reaction Network Modeling.
-- `research-reactors.html`: Multiphysics Modeling of Chemical Reactors.
 - `research-ai.html`: Scientific AI Integration.
+- `research-reactors.html`: Multiphysics Modeling of Chemical Reactors.
 
 ## Preview on your computer
 Open `index.html` directly in Chrome, Edge, or Firefox. Or open the directory in VS Code and use a local preview extension.
