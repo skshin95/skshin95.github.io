@@ -7,7 +7,7 @@
     <meta name="description" content="Automated Reaction Network Modeling - research by Sunkyu Shin.">
     <title>Automated Reaction Network Modeling | Sunkyu Shin</title>
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-    <link rel="stylesheet" href="css/style.css?v=20261022c">
+    <link rel="stylesheet" href="css/style.css?v=20261022d">
   </head>
   <body>
     <header class="site-header">
@@ -59,7 +59,7 @@
             <p class="section-kicker">Approach / 01</p>
             <h2>AI-based automatic reaction network generation</h2>
             <figure class="framework-panel">
-              <img src="assets/automated-network-generation.png?v=20261022c" alt="AI-based automatic reaction network generation: quantum chemistry data and database plus molecular GNN property prediction feed RMG, which generates the reaction network">
+              <img src="assets/automated-network-generation.png?v=20261022d" alt="AI-based automatic reaction network generation: quantum chemistry data and database plus molecular GNN property prediction feed RMG, which generates the reaction network">
             </figure>
             <p>Reaction mechanisms provide a molecular-scale description of a chemical system. I use automated mechanism-generation tools and carefully evaluated kinetic information to construct and validate mechanisms for ammonia-based fuel mixtures, then analyze how individual pathways shape emissions.</p>
             <a href="index.html#research" class="text-link">Explore overall research framework ↗</a>
@@ -94,16 +94,25 @@
                 <span>NH₃/CH₄ co-firing (top), and quantum chemistry calculations feeding the RMG database for automatic generation of the interactive 3D reaction network (bottom; 104 species, 2,348 connections). Click the network, then drag to rotate, scroll to zoom, and hover over a node to see the species.</span>
               </figcaption>
             </figure>
+            <h4 class="app-subhead">Pollutant prediction</h4>
+            <p>The mechanism predicts key pollutants (NO, HCN, CO, and N₂O) across temperatures, compared with experimental data and other mechanisms, and maps NOx, N₂O, HCN, and CO emissions over the full range of NH₃/H₂/CH₄ fuel compositions.</p>
+            <figure>
+              <img src="assets/pollutant-prediction.png" alt="Predicted NO, HCN, CO, and N2O concentrations versus temperature compared with experimental data and other mechanisms, and ternary maps of NOx, N2O, HCN, and CO emissions over NH3/H2/CH4 compositions" loading="lazy">
+              <figcaption class="framework-caption">
+                <b>Figure 02.</b>
+                <span>Pollutant profiles versus temperature compared with experiments (left), and NOx, N₂O, HCN, and CO emission maps across NH₃/H₂/CH₄ fuel compositions (right).</span>
+              </figcaption>
+            </figure>
+            <h4 class="app-subhead">Key reaction pathways</h4>
+            <p>Reaction path analysis traces the dominant routes through nitrogen, cross (C–N), and carbon chemistry for NH₃/CH₄ ratios of 80/20, 50/50, and 20/80, highlighting the pathways that form NOx components and convert NO to N₂O and N₂.</p>
+            <figure>
+              <a href="assets/reaction-pathways.png" target="_blank" rel="noopener"><img src="assets/reaction-pathways.png" alt="Reaction path diagram of nitrogen, cross, and carbon chemistry with branching fractions for NH3/CH4 ratios of 80/20, 50/50, and 20/80, highlighting NOx formation and NO conversion to N2O and N2" loading="lazy"></a>
+              <figcaption class="framework-caption">
+                <b>Figure 03.</b>
+                <span>Reaction path diagram with branching fractions for NH₃/CH₄ = 80/20 (red), 50/50 (green), and 20/80 (blue). Click the image to view it at full size.</span>
+              </figcaption>
+            </figure>
           </article>
-          <div class="case-list single">
-            <article class="case reveal">
-              <div class="framework-top">
-                <span>Application / 02</span>
-              </div>
-              <h3>Reaction network analysis</h3>
-              <p>Identify dominant chemical routes and evaluate how kinetic pathways change with mixture composition and operating conditions.</p>
-            </article>
-          </div>
         </div>
       </section>
       <section class="section section-white">
@@ -140,6 +149,6 @@
         </div>
       </div>
     </footer>
-    <script src="js/site.js?v=20261022c" defer></script>
+    <script src="js/site.js?v=20261022d" defer></script>
   </body>
 </html>

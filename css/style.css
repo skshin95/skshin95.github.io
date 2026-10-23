@@ -1260,6 +1260,14 @@ a:focus-visible {
   margin: 14px 0 8px;
 }
 
+.app-subhead {
+  font-size: 19px;
+  letter-spacing: -.02em;
+  margin: 34px 0 8px;
+  padding-top: 26px;
+  border-top: 1px solid var(--line);
+}
+
 .app-case > p {
   font-size: 15px;
   color: var(--muted);
