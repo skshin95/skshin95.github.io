@@ -1004,6 +1004,12 @@ a:focus-visible {
   border-top: 1px solid var(--line);
 }
 
+figure > .network-row:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+
 .network-row .network-embed {
   height: auto;
   aspect-ratio: 1/1;
